@@ -1,0 +1,84 @@
+:root{
+    --backGroundGreen: #354f5f; 
+    --green: #52796f;
+    --lightGreen: #cad2c5;
+    --blackBorder : #000814;
+}
+body{
+    margin: 0;
+}
+.contenedor-juego{
+    background-color: var(--backGroundGreen);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn-mezclar{
+    width: 200px;
+    height: 80px;
+    border-radius: 50px;
+    font-size: 30px;
+    background-color: var(--green);
+    color: var(--lightGreen);
+    border: 2px solid var(--lightGreen);
+    transition: .3s;
+}
+.btn-mezclar:hover{
+    background-color: var(--lightGreen);
+    color: var(--green);
+    border: 3px solid var(--green);
+}
+.grid-contenedor-carta{
+    background-color: var(--lightGreen);
+    border: 20px solid #2f3e46;
+    width: 40%;
+    height:80%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(3, 1fr); 
+    grid-gap: 10px; 
+}
+.grid-carta{
+    opacity: 1;
+    display: grid;
+    width: 90%;
+    height: 90%;
+    background-color: var(--green);
+    border: 2px solid var(--blackBorder);
+    border-radius: 10px;
+    justify-items: center;
+    align-items: center;
+    transition: .5s;
+}
+.grid-carta:hover{
+    background-color: var(--backGroundGreen);
+}
+.grid-carta img{
+    width: 95%;
+    height: 95%;
+    transition: .3s;
+}
+
+
+.contenedor-ganador{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 30%;
+}
+.contenedor-ganador h1{
+    color: #cad2c5;
+    font-size: 80px;
+}
+.contenedor-ganador h2{
+    color: #cad2f0;
+    font-size: 35px;
+}
