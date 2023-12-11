@@ -1,5 +1,5 @@
 $contenedorCartas = document.getElementById("contenedor-cartas")
-$btnComenzarJuego = document.getElementById("boton-mezclar")
+$btnMezclarReiniciar = document.getElementById("boton-mezclar-reiniciar")
 $contenedorGanador = document.getElementById("ganaste")
 $contenedorJuego = document.getElementById("contenedor-juego")
 
@@ -14,8 +14,9 @@ let cartasReveladas = {
 const volverAJugar= ()=>{
         $contenedorCartas.style.display = "none";
         $contenedorGanador.style.display = "flex";
-        $btnComenzarJuego.textContent = "VOLVER A JUGAR"
-        $btnComenzarJuego.style.width = "300px"
+        $btnMezclarReiniciar.style.display = "block"
+        $btnMezclarReiniciar.textContent = "Volver a Jugar"
+        $btnMezclarReiniciar.style.width = "300px" 
 }
 
 const limpiarCartasReveladas = ()=>{
@@ -121,17 +122,18 @@ const comprobarJuegoTerminado = () => {
         volverAJugar()
     }
 };
-
-
+const ocultarBoton = ()=>{
+    $btnMezclarReiniciar.style.display = "none"
+}
 const comenzarJuego = ()=>{
     if(partida === 1){
         location.reload()
     }
     partida++
+    ocultarBoton()
     ocultarCartas()
     mezclarCartas()
     posicionarCartasAleatoriamente()
     otorgarRevelarCarta()
 }
-
-$btnComenzarJuego.addEventListener("click",comenzarJuego)
+$btnMezclarReiniciar.addEventListener("click",comenzarJuego)
